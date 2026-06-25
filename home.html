@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>FoodShop </title>
+
+<link rel="stylesheet" href="restaurant.css">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap" rel="stylesheet">
+</head>
+
+<body>
+
+<header>
+  <nav class="navbar">
+    <h1 class="logo">Food<span>Shop</span></h1>
+
+    <ul class="nav-links">
+      <li><a href="#menu">Menu</a></li>
+      <li><a href="#cart">Cart</a></li>
+    </ul>
+  </nav>
+</header>
+
+<section class="hero">
+  <div>
+    <h2>Order Your Favourite Food</h2>
+    <button onclick="scrollToMenu()">Explore Menu</button>
+  </div>
+</section>
+
+<!-- FILTER -->
+<div class="filter">
+  <button onclick="filterItems('all')">All</button>
+  <button onclick="filterItems('fast')">Fast Food</button>
+  <button onclick="filterItems('snacks')">Snacks</button>
+  <button onclick="filterItems('drink')">Drinks</button>
+</div>
+
+<!-- MENU -->
+<section class="menu" id="menu">
+<div class="cards">
+
+<!-- FAST FOOD -->
+<div class="card fast"><img src="images/pizza.jpg"><h3>Pizza</h3><span>₹199</span><button onclick="addToCart('Pizza',199)">Add</button></div>
+<div class="card fast"><img src="images/burger.jpg"><h3>Burger</h3><span>₹99</span><button onclick="addToCart('Burger',99)">Add</button></div>
+<div class="card fast"><img src="images/pasta.jpg"><h3>Pasta</h3><span>₹149</span><button onclick="addToCart('Pasta',149)">Add</button></div>
+<div class="card fast"><img src="images/pizza2.jpg"><h3>Farmhouse Pizza</h3><span>₹249</span><button onclick="addToCart('Farmhouse Pizza',249)">Add</button></div>
+<div class="card fast"><img src="images/wrap.jpg"><h3>Veg Wrap</h3><span>₹119</span><button onclick="addToCart('Veg Wrap',119)">Add</button></div>
+<div class="card fast"><img src="images/chole.jpg"><h3>Chole Bhature</h3><span>₹139</span><button onclick="addToCart('Chole Bhature',139)">Add</button></div>
+<div class="card fast"><img src="images/rajma.jpg"><h3>Rajma Chawal</h3><span>₹129</span><button onclick="addToCart('Rajma',129)">Add</button></div>
+<div class="card fast"><img src="images/paneer.jpg"><h3>Paneer Tikka</h3><span>₹179</span><button onclick="addToCart('Paneer Tikka',179)">Add</button></div>
+<div class="card fast"><img src="images/dosa.jpg"><h3>Masala Dosa</h3><span>₹129</span><button onclick="addToCart('Dosa',129)">Add</button></div>
+
+<!-- SNACKS -->
+<div class="card snacks"><img src="images/momos.jpg"><h3>Momos</h3><span>₹79</span><button onclick="addToCart('Momos',79)">Add</button></div>
+<div class="card snacks"><img src="images/fries.jpg"><h3>Fries</h3><span>₹79</span><button onclick="addToCart('Fries',79)">Add</button></div>
+<div class="card snacks"><img src="images/samosa.jpg"><h3>Samosa</h3><span>₹29</span><button onclick="addToCart('Samosa',29)">Add</button></div>
+
+<div class="card snacks"><img src="images/icecream.jpg"><h3>Ice Cream</h3><span>₹69</span><button onclick="addToCart('Ice Cream',69)">Add</button></div>
+
+<!-- DRINKS -->
+<div class="card drink"><img src="images/coldrink.jpg"><h3>Cold Drink</h3><span>₹49</span><button onclick="addToCart('Cold Drink',49)">Add</button></div>
+<div class="card drink"><img src="images/coffee.jpg"><h3>Coffee</h3><span>₹59</span><button onclick="addToCart('Coffee',59)">Add</button></div>
+<div class="card drink"><img src="images/shake.jpg"><h3>Chocolate Shake</h3><span>₹99</span><button onclick="addToCart('Shake',99)">Add</button></div>
+<div class="card drink"><img src="images/juice.jpg"><h3>Orange Juice</h3><span>₹79</span><button onclick="addToCart('Juice',79)">Add</button></div>
+
+</div>
+</section>
+
+<!-- CART -->
+<section class="cart" id="cart">
+<h2>Your Cart</h2>
+
+<input type="text" id="customer" placeholder="Enter your name">
+
+<table>
+<thead>
+<tr><th>Item</th><th>Qty</th><th>Total</th><th></th></tr>
+</thead>
+<tbody id="cart-items"></tbody>
+</table>
+
+<h2>Total: ₹<span id="total">0</span></h2>
+
+<button onclick="generateBill()">Generate Bill</button>
+<button onclick="clearCart()">Clear Cart</button>
+</section>
+
+<footer>
+<p>© 2024 FoodShop </p>
+</footer>
+
+<!-- BILL MODAL -->
+<div id="billModal" class="modal">
+  <div class="modal-content">
+    <span class="close" onclick="closeBill()">&times;</span>
+    <h2 class="bill-title">🧾 FoodShop Receipt</h2>
+
+<div class="bill-info">
+  <p id="bill-name"></p>
+  <p id="bill-date"></p>
+</div>
+
+<table id="bill-table" class="bill-table"></table>
+
+<div class="bill-total-box">
+  <h3>Total: ₹<span id="bill-total"></span></h3>
+</div>
+
+<p class="thanks">Thank you! Visit again 😊</p>
+    <button onclick="printBill()">Print</button>
+  </div>
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>
