@@ -58,7 +58,6 @@ Through this project, I learned:
 
 ## 🔮 Future Improvements
 
-- Add shopping cart functionality
 - Add user authentication
 - Add online payment integration
 - Add backend database support
@@ -66,8 +65,7 @@ Through this project, I learned:
 
 ## 👩‍💻 Author
 
-**Ramandeep
-Kaur**
+**Ramandeep Kaur**
 
 GitHub: https://github.com/riyahardeepkaur-gif
 
